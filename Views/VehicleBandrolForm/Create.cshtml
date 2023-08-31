@@ -1,0 +1,88 @@
+﻿@using BandrolSistemi.Data.Enum;
+@using Microsoft.AspNetCore.Identity;
+@using ProjeBandrol.Data.ViewModels;
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager﻿
+@model VehicleBandrolVM
+@{
+   
+
+}
+
+
+
+<div class="row">
+    <div class="col-md-8 offset-2">
+        
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <form asp-action="Create">
+                  
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="SeriNo" class="control-label">Seri No</label>
+                                <input asp-for="SeriNo" class="form-control" style="border-radius: 70px;" />
+                                <span asp-validation-for="SeriNo" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Renk" class="control-label">Renk</label>
+                                <input asp-for="Renk" class="form-control" style="border-radius: 70px;" />
+                                <span asp-validation-for="Renk" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Model" class="control-label">Model</label>
+                                <input asp-for="Model"  class="form-control" style="border-radius: 70px;" />
+                                <span asp-validation-for="Model" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Plaka" class="control-label">Plaka</label>
+                                <input asp-for="Plaka" class="form-control" style="border-radius: 70px;" />
+                                <span asp-validation-for="Plaka" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="KullaniciTipi" class="control-label">Film kategorisi</label>
+                                <select asp-for="KullaniciTipi" style="border-radius: 70px;" class="form-control" asp-items="Html.GetEnumSelectList<UserType>()"></select>
+                                <span asp-validation-for="KullaniciTipi" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label asp-for="BandrolDurumu" class="control-label" style="border-radius: 70px;">BandrolDurumu</label>
+                                    <select asp-for="BandrolDurumu" style="border-radius: 70px;">
+                                        <option value="">Lütfen Bir Seçim Yapınız!</option>
+                                        <option value="true">Evet</option>
+                                        <option value="false">Hayır</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label asp-for="BandrolDurumuTxt" class="control-label">BandrolDurumuTxt</label>
+                                    <textarea asp-for="BandrolDurumuTxt" style="border-radius: 30px;" class="form-control"></textarea>
+                                    <span asp-validation-for="BandrolDurumuTxt" class="text-danger"></span>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                        
+                       
+                    </div>
+
+                   
+                    <br />
+                    <div class="form-group">
+                        <input type="submit" value="Oluştur" class="btn btn-outline-success float-right" style="border-radius: 70px;" />
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
