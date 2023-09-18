@@ -44,16 +44,36 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/seyma/OneDrive/Masaüstü/ProjeBandrol/ProjeBandrol/Views/Admin/BandrolOnayla.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQmFuZHJvbE9uYXlsYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/seyma/OneDrive/Masaüstü/ProjeBandrol/ProjeBandrol/Views/Admin/BandrolOnaylaListe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQmFuZHJvbE9uYXlsYUxpc3RlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/seyma/OneDrive/Masaüstü/ProjeBandrol/ProjeBandrol/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/seyma/OneDrive/Masaüstü/ProjeBandrol/ProjeBandrol/Views/Admin/Index1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXgxLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/seyma/OneDrive/Masaüstü/ProjeBandrol/ProjeBandrol/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/seyma/OneDrive/Masaüstü/ProjeBandrol/ProjeBandrol/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/seyma/OneDrive/Masaüstü/ProjeBandrol/ProjeBandrol/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/seyma/OneDrive/Masaüstü/ProjeBandrol/ProjeBandrol/Views/Shared/_Aside.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Bc2lkZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/seyma/OneDrive/Masaüstü/ProjeBandrol/ProjeBandrol/Views/Shared/_Footer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Gb290ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/seyma/OneDrive/Masaüstü/ProjeBandrol/ProjeBandrol/Views/Shared/_LoginPartial.cshtml]
@@ -64,16 +84,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/seyma/OneDrive/Masaüstü/ProjeBandrol/ProjeBandrol/Views/VehicleBandrolForm/AracListe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWNsZUJhbmRyb2xGb3JtXEFyYWNMaXN0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/seyma/OneDrive/Masaüstü/ProjeBandrol/ProjeBandrol/Views/VehicleBandrolForm/BandrolBasvurusu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWNsZUJhbmRyb2xGb3JtXEJhbmRyb2xCYXN2dXJ1c3UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/seyma/OneDrive/Masaüstü/ProjeBandrol/ProjeBandrol/Views/VehicleBandrolForm/BandrolListe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWNsZUJhbmRyb2xGb3JtXEJhbmRyb2xMaXN0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/seyma/OneDrive/Masaüstü/ProjeBandrol/ProjeBandrol/Views/VehicleBandrolForm/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWNsZUJhbmRyb2xGb3JtXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/seyma/OneDrive/Masaüstü/ProjeBandrol/ProjeBandrol/Views/VehicleBandrolForm/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWNsZUJhbmRyb2xGb3JtXEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/seyma/OneDrive/Masaüstü/ProjeBandrol/ProjeBandrol/Views/VehicleBandrolForm/Index1.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWNsZUJhbmRyb2xGb3JtXEluZGV4MS5jc2h0bWw=
+[C:/Users/seyma/OneDrive/Masaüstü/ProjeBandrol/ProjeBandrol/Views/VehicleBandrolForm/Odeme.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWNsZUJhbmRyb2xGb3JtXE9kZW1lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/seyma/OneDrive/Masaüstü/ProjeBandrol/ProjeBandrol/Views/_ViewImports.cshtml]

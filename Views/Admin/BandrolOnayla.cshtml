@@ -1,0 +1,82 @@
+﻿@using ProjeBandrol.Data.ViewModels;
+@model BandrolOnaylaVM
+
+
+
+<div class="row">
+    <div class="">
+        <div class="card" style="border:none;border-radius:5px;height:590px;margin-left:12px;margin-right:12px;">
+            <div class="card-header" style="background-color:white; color:#181C32; font-weight:500;font-size:1.275rem;margin:0.5rem;">
+                Başvuru Onay
+            </div>
+            <div class="card-body">
+                <h3>Kullanıcı Bilgileri</h3>
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <td>Ad : </td>
+                            <td>@Model.Ad</td>
+                        </tr>
+                        <tr>
+                            <td>Soyad : </td>
+                            <td>@Model.Soyad</td>
+                        </tr>
+                        <tr>
+                            <td>Tc Kimlik No : </td>
+                            <td>@Model.TcKimlikNo</td>
+                        </tr>
+                        <tr>
+                            <td>Kullanıcı Tipi : </td>
+                            <td>@Model.KullaniciTipi</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Araç Bilgileri</h3>
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <td>Seri No : </td>
+                            <td>@Model.SeriNo</td>
+                        </tr>
+                        <tr>
+                            <td>Plaka : </td>
+                            <td>@Model.Plaka</td>
+                        </tr>
+                        <tr>
+                            <td>Renk : </td>
+                            <td>@Model.Renk</td>
+                        </tr>
+                        <tr>
+                            <td>Model : </td>
+                            <td>@Model.Model</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Ödeme Bilgileri</h3>
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <td>Dekont No : </td>
+                            <td>@Model.DekontNo</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+
+                <form asp-action="BandrolOnayla" method="post">
+
+                    <div class="row">
+                        <input type="hidden" id="BandrolId" name="BandrolId" class="form-control" value="@Model.BandrolId" />
+
+                        <div class="form-group">
+                            <button type="" value="" class="btn" style="background-color:#E4E6EF;color:black;">Geri</button>
+                            <button type="submit" name="BasvuruDurumu" value="Onaylandi" class="btn" style="background-color:#1BC5BD;color:white;margin-left:5px;">Onayla</button>
+                            <button type="submit" name="BasvuruDurumu" value="Reddedildi" class="btn" style="background-color:red;color:white;margin-left:5px;">Reddet</button>
+
+                        </div>
+
+                </form>
+            </div>
+

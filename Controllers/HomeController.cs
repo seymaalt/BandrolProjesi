@@ -1,34 +1,34 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using ProjeBandrol.Data.Services;
 using ProjeBandrol.Models;
 using System.Diagnostics;
 
 namespace ProjeBandrol.Controllers
 {
-    [Authorize]
+ 
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+      
+        private readonly IHomeService _service;
 
-        public HomeController(ILogger<HomeController> logger)
+        public int SecilenArac { get; private set; }
+
+        public HomeController(IHomeService service)
         {
-            _logger = logger;
+          
+            _service = service;
         }
-
-        public IActionResult Index()
+      
+        public async Task<IActionResult> Index()
         {
+            ViewBag.VehicleCount = await _service.VehicleCount();
+            ViewBag.UserCount = await _service.UserCount();
+            ViewBag.BandrolCount = await _service.BandrolCount();
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+      
     }
 }

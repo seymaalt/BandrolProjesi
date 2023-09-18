@@ -1,8 +1,88 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@using Microsoft.AspNetCore.Identity;
+@using Microsoft.AspNetCore.Identity
+@using ProjeBandrol.Data
+@using ProjeBandrol.Models
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> userManager
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+<div class="d-flex flex-column-fluid">
+    <div class=" container-fluid ">
+        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+            <h1 class="display-4">Sakarya Üniversitesi Bandrol Yönetim Sistemi</h1>
+            @if (!SignInManager.IsSignedIn(User)) { 
+                <p class="lead">Bandrol işlemleri için kullanıcı girişi yapın.</p>
+            }
+           
+        </div>
+
+        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+
+            <div class="row" style="display:flex;justify-content: center">
+                <div class="col-xl-3 col-sm-6 py-2">
+                    <div class="card bg-success text-white h-100">
+                        <div class="card-body bg-success">
+                            <div class="rotate">
+                                <i class="fa fa-user fa-4x"></i>
+                            </div>
+                            <h6 class="text-uppercase">Kullanıcı</h6>
+                            <h1 class="display-4">@ViewBag.UserCount</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 py-2">
+                    <div class="card text-white bg-danger h-100">
+                        <div class="card-body bg-danger">
+                            <div class="rotate">
+                                <i class="fa fa-list fa-4x"></i>
+                            </div>
+                            <h6 class="text-uppercase">Bandrol</h6>
+                            <h1 class="display-4">@ViewBag.BandrolCount</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 py-2">
+                    <div class="card text-white bg-info h-100">
+                        <div class="card-body bg-info">
+                            <div class="rotate">
+                                <i class="fa fa-building fa-4x"></i>
+                            </div>
+                            <h6 class="text-uppercase">Araç</h6>
+                            <h1 class="display-4">@ViewBag.VehicleCount</h1>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+
+            <style>
+                .card {
+                    overflow: hidden;
+                }
+
+                .card-body .rotate {
+                    z-index: 8;
+                    float: right;
+                    height: 100%;
+                }
+
+                    .card-body .rotate i {
+                        color: rgba(20, 20, 20, 0.15);
+                        position: absolute;
+                        left: 0;
+                        left: auto;
+                        right: -10px;
+                        bottom: 0;
+                        display: block;
+                        -webkit-transform: rotate(-44deg);
+                        -moz-transform: rotate(-44deg);
+                        -o-transform: rotate(-44deg);
+                        -ms-transform: rotate(-44deg);
+                        transform: rotate(-44deg);
+                    }
+            </style>
+        </div>
+
+     
+    </div>
 </div>

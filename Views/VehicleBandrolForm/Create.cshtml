@@ -1,85 +1,81 @@
-﻿@using BandrolSistemi.Data.Enum;
+﻿@using ProjeBandrol.Data.Enum;
 @using Microsoft.AspNetCore.Identity;
 @using ProjeBandrol.Data.ViewModels;
-@inject SignInManager<AppUser> SignInManager
-@inject UserManager<AppUser> UserManager﻿
+@inject             SignInManager<AppUser> SignInManager
+@inject             UserManager<AppUser> UserManager﻿
 @model VehicleBandrolVM
-@{
-   
-
-}
 
 
 
-<div class="row">
-    <div class="col-md-8 offset-2">
+<div class="row create-form">
+    <div class="">
         
         <div class="row">
-            <div class="col-md-8 offset-2">
-                <form asp-action="Create">
-                  
+            <div class="">
+                <div class="card" style="border:none;border-radius:5px;height:590px;margin-left:12px;margin-right:12px;">
+                    <div class="card-header" style="background-color:white; color:#181C32; font-weight:500;font-size:1.275rem;margin:0.5rem;">
+                        Araç Bilgilerini Ekle
+                    </div>
+                    <div class="card-body" >
+                        <form asp-action="Create">
+                           
+                            <div class="row" >
 
+                                <div class="">
+                                    <div class="form-group" style="padding-left:12.5px;">
+                                        <label asp-for="SeriNo" class="col-sm-3 control-label" style="font-size:1rem;font-weight:400;color:#3f4254;display:inline-block;margin-bottom:0.5rem;">Seri No</label>
+                                        <input asp-for="SeriNo" class="col-sm-9 form-control" style="max-width:75%; padding-right:12.5px;border: 1px solid #E4E6EF;" />
 
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label asp-for="SeriNo" class="control-label">Seri No</label>
-                                <input asp-for="SeriNo" class="form-control" style="border-radius: 70px;" />
-                                <span asp-validation-for="SeriNo" class="text-danger"></span>
-                            </div>
-                            <div class="form-group">
-                                <label asp-for="Renk" class="control-label">Renk</label>
-                                <input asp-for="Renk" class="form-control" style="border-radius: 70px;" />
-                                <span asp-validation-for="Renk" class="text-danger"></span>
-                            </div>
-                            <div class="form-group">
-                                <label asp-for="Model" class="control-label">Model</label>
-                                <input asp-for="Model"  class="form-control" style="border-radius: 70px;" />
-                                <span asp-validation-for="Model" class="text-danger"></span>
-                            </div>
-                            <div class="form-group">
-                                <label asp-for="Plaka" class="control-label">Plaka</label>
-                                <input asp-for="Plaka" class="form-control" style="border-radius: 70px;" />
-                                <span asp-validation-for="Plaka" class="text-danger"></span>
-                            </div>
-                            <div class="form-group">
-                                <label asp-for="KullaniciTipi" class="control-label">Film kategorisi</label>
-                                <select asp-for="KullaniciTipi" style="border-radius: 70px;" class="form-control" asp-items="Html.GetEnumSelectList<UserType>()"></select>
-                                <span asp-validation-for="KullaniciTipi" class="text-danger"></span>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label asp-for="BandrolDurumu" class="control-label" style="border-radius: 70px;">BandrolDurumu</label>
-                                    <select asp-for="BandrolDurumu" style="border-radius: 70px;">
-                                        <option value="">Lütfen Bir Seçim Yapınız!</option>
-                                        <option value="true">Evet</option>
-                                        <option value="false">Hayır</option>
-                                    </select>
+                                        <span asp-validation-for="SeriNo" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group" style="padding-left:12.5px;">
+                                        <label asp-for="Renk" class="col-sm-3 control-label" style="font-size:1rem;font-weight:400;color:#3f4254;display:inline-block;margin-bottom:0.5rem;">Renk</label>
+                                        <input asp-for="Renk" class="col-sm-9 form-control" style="max-width:75%; padding-right:12.5px;border: 1px solid #E4E6EF;" />
+                                        <span asp-validation-for="Renk" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group" style="padding-left:12.5px;">
+                                        <label asp-for="Model" class="col-sm-3 control-label" style="font-size:1rem;font-weight:400;color:#3f4254;display:inline-block;margin-bottom:0.5rem;">Model</label>
+                                        <input asp-for="Model" class="col-sm-9 form-control" style="max-width:75%; padding-right:12.5px;border: 1px solid #E4E6EF;" />
+                                        <span asp-validation-for="Model" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group" style="padding-left:12.5px;">
+                                        <label asp-for="Plaka" class="col-sm-3 control-label" style="font-size:1rem;font-weight:400;color:#3f4254;display:inline-block;margin-bottom:0.5rem;">Plaka</label>
+                                        <input asp-for="Plaka" class="col-sm-9 form-control" style="max-width:75%; padding-right:12.5px;border: 1px solid #E4E6EF;" />
+                                        <span asp-validation-for="Plaka" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group" style="padding-left:12.5px;">
+                                        <label asp-for="KullaniciTipi" class="col-sm-3 control-label" style="font-size:1rem;font-weight:400;color:#3f4254;display:inline-block;margin-bottom:0.5rem;">Kullanıcı tipi</label>
+                                        <select asp-for="KullaniciTipi" class="col-sm-9 form-control" asp-items="Html.GetEnumSelectList<UserType>()" style="max-width:75%; padding-right:12.5px;border: 1px solid #E4E6EF;"></select>
+                                        <span asp-validation-for="KullaniciTipi" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group" style="padding-left:12.5px;">
+                                        <label asp-for="BandrolDurumu" class="col-sm-3 control-label" style="font-size:1rem;font-weight:400;color:#3f4254;display:inline-block;margin-bottom:0.5rem;">Bu aracın daha önce bandrolü var mıydı ?</label>
+                                        <select asp-for="BandrolDurumu" class="col-sm-9 form-control" style="max-width:75%; padding-right:12.5px;border: 1px solid #E4E6EF;">
+                                            <option value="true" >Evet</option>
+                                            <option value="false">Hayır</option>
+                                        </select>
+                                        <span asp-validation-for="BandrolDurumu" class="text-danger"></span>
+                                    </div>
+                                    <div class="col-md-12" style="padding-left:12.5px;">
+                                        <div class="form-group">
+                                            <label asp-for="BandrolDurumuTxt" class="col-sm-3 control-label" style="font-size:1rem;font-weight:400;color:#3f4254;display:inline-block;margin-bottom:0.5rem;">Açıklama</label>
+                                            <input asp-for="BandrolDurumuTxt" class="col-sm-9 form-control" style="max-width:75%; padding-right:12.5px;border: 1px solid #E4E6EF;" />
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                            <br />
+                            <div class="form-group">
+                                <button type="" href="~/Home/Index" value="" class="btn" style="background-color:#E4E6EF;color:black;">Geri</button>
 
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label asp-for="BandrolDurumuTxt" class="control-label">BandrolDurumuTxt</label>
-                                    <textarea asp-for="BandrolDurumuTxt" style="border-radius: 30px;" class="form-control"></textarea>
-                                    <span asp-validation-for="BandrolDurumuTxt" class="text-danger"></span>
-                                </div>
+                                <button type="submit" value="" class="btn" style="background-color:#1BC5BD;color:white;margin-left:5px;">Kaydet</button>
                             </div>
-                            
-                            
-                        </div>
-                        
-                       
+
+                        </form>
+
                     </div>
-
-                   
-                    <br />
-                    <div class="form-group">
-                        <input type="submit" value="Oluştur" class="btn btn-outline-success float-right" style="border-radius: 70px;" />
-                    </div>
-
-                </form>
-
+                </div>
+                
             </div>
         </div>
 

@@ -1,0 +1,56 @@
+﻿@using ProjeBandrol.Data.Enum;
+@using Microsoft.AspNetCore.Identity;
+@using ProjeBandrol.Data.ViewModels;
+@model List<VehicleBandrolVM>
+
+
+
+<div class="row create-form">
+    <div class="">
+
+        <div class="row">
+            <div class="">
+                <div class="card" style="border:none;border-radius:5px;height:520px;margin-left:12px;margin-right:12px;">
+                    <div class="card-header" style="background-color:white; color:#181C32; font-weight:500;font-size:1.275rem;margin:0.5rem;">
+                        Araçlarım
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Seri No</th>
+                                    <th>Plaka</th>
+                                    <th>Bandrol Tipi</th>
+                                    <th class="text-center">İşlemler</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                       
+                                        <td>@item.SeriNo </td>
+                                        <td>@item.Plaka</td>
+                                        <td class="text-center">@item.KullaniciTipi</td>
+                                        <td class="text-center">
+                                            <form asp-action="BandrolBasvurusu" method="post">
+                                                <input type="hidden" id="aracId" name="aracId" class="form-control" value="@item.Id">
+                                                <button type="submit" class="btn btn-primary btn-sm" >Bandrol Başvurusu</button>
+                                            </form>
+                                        </td>
+                                        
+                                    </tr>
+                                }
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+

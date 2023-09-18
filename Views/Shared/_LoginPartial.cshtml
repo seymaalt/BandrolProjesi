@@ -1,29 +1,39 @@
 ﻿@using Microsoft.AspNetCore.Identity;
 @using Microsoft.AspNetCore.Identity
 @using ProjeBandrol.Data
+@using ProjeBandrol.Models
+@inject             SignInManager<AppUser> SignInManager
+@inject             UserManager<AppUser> userManager
 
-@inject SignInManager<AppUser> SignInManager
-@inject UserManager<AppUser> UserManager
+@{
+    var user = await userManager.GetUserAsync(User);
+}
 
-<ul class="navbar-nav">
+
+    
 @if (SignInManager.IsSignedIn(User))
 {
-    <li class="nav-item">
-        <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserId(User)</a>
-    </li>
-    <li class="nav-item">
-        <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-            <button id="logout" type="submit" class="nav-link btn btn-link text-dark">Logout</button>
-        </form>
-    </li>
+    <ul class="menu-nav" style="text-align:right; margin-top:10px;">
+        <li class="menu-nav-el" style="text-align:right;list-style-type:none">
+                <a id="manage" class="nav-link" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" style="background-color:#282F48; color:white; border-radius:3px; ">@user.Ad.ToUpper() @user.Soyad.ToUpper()</a>
+            </li>
+
+        <li class="menu-nav-el" data-menu-toggle="click" aria-haspopup="true" style="text-align:right;list-style-type:none">
+                <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" style="color:#282F48;">
+                    <button id="logout" type="submit" class="nav-link btn btn-link " style="background-color:#282F48; color:white;">Çıkış Yap</button>
+                </form>
+            </li>
+
+        </ul>
+  
 }
 else
 {
-    <li class="nav-item">
-        <a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">Register</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link text-dark" id="login" asp-area="Identity" asp-page="/Account/Login">Login</a>
-    </li>
+        <ul class="menu-nav">
+
+        <li class="nav-item menu-nav-el" style="text-align:right;list-style-type:none">
+                <a class="nav-link " id="login" asp-area="Identity" asp-page="/Account/Login" style="background-color:#282F48; color:white; border-radius:3px;">Giriş Yap</a>
+            </li>
+        </ul>
+
 }
-</ul>

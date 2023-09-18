@@ -1,24 +1,58 @@
-html {
-  font-size: 14px;
+html, body {
+    font-size: 14px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    min-height: 100%;
+    font-family: Poppins, Helvetica, "sans-serif";
+   color: #3F4254;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+a {
+    color: #3F4254; /* Baðlantý rengi */
+    text-decoration: none; /* Baðlantý altý çizgisini kaldýrýr */
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+    a:hover {
+        color: #007ACC; /* Fare baðlantýnýn üzerine geldiðinde maviye döner */
+    }
+
+.footer-new {
+    height:20px;
+}
+.nav-logo {
+    
+
+    padding: 0 25px;
+}
+.menu-nav{
+    display:flex;
+    padding:5px;
+}
+.aside-main {
+
+}
+.menu-nav-el {
+    font-family: Poppins, Helvetica, "sans-serif";
+    padding: 4px;
+}
+.container-nav {
+    background-color: #1E1E2D;
 }
 
-body {
-  margin-bottom: 60px;
+.create-form{
+    background-color:#F2F3F8;
+}
+
+.aside {
+   background-color:#FFFFFF;
+   height:670px;
+   width:265px;
 }
 
 /*tab navigation*/
-.login-logout-card .card-header {
+    .login-logout-card .card-header {
     padding: 0px 0px 12px 0px;
 }
 
@@ -40,3 +74,16 @@ body {
 .login-logout-card .card-body {
     padding: 10px 20px;
 }
+
+.main-scroll {
+    /* Ýçeriðin yüksekliði */
+    overflow-y: scroll; /* Dikey scroll çubuðunu görünür yapar */
+}
+
+    .main-scroll::-webkit-scrollbar {
+        width: 0.5em; /* Scroll çubuðu geniþliði */
+    }
+
+    .main-scroll::-webkit-scrollbar-thumb {
+        background-color: #888; /* Scroll çubuðu rengi */
+    }

@@ -1,0 +1,96 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@using Microsoft.AspNetCore.Identity
+@using ProjeBandrol.Data
+@using ProjeBandrol.Models
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> userManager
+
+
+<aside style="width:300px;height:500px;background-color:white;">
+
+
+
+    <ul style="padding-top:0.5rem;">
+        <li style=" padding: 8px 0;list-style-type:none">
+
+            <a href="~/Home/Index" style=" text-decoration:none;text-transform: initial;">
+                <i class='bx bx-home-alt-2' style='color:#b5b5c3;font-size: 1.3rem;flex: 0 0 35px;'></i>
+                <span>Anasayfa</span>
+            </a>
+        </li>
+        @if (SignInManager.IsSignedIn(User)){
+            @if (!(User.IsInRole("Yonetici")))
+        {
+             <li style=" padding: 8px 0;list-style-type:none;">
+            <a>
+                <i class='bx bx-car' style='color:#b5b5c3;font-size: 1.3rem;flex: 0 0 35px;'></i>
+
+                <span>Araç İşlemleri</span>
+            </a>
+            <ul>
+                <li style=" padding: 5px 0;">
+                    <a href="~/VehicleBandrolForm/Create" style=" text-decoration:none;text-transform: initial;">
+                        Araç Oluştur
+                    </a>
+                </li>
+                <li style=" padding: 5px 0;">
+                    <a href="~/VehicleBandrolForm/AracListe" style=" text-decoration:none;text-transform: initial;">
+                        Araçlarım
+                    </a>
+
+                </li>
+            </ul>
+        </li>
+
+        <li style=" padding: 8px 0;list-style-type:none;">
+            <a style=" text-decoration:none;text-transform: initial;">
+                <i class='bx bx-file' style='color:#b5b5c3;font-size: 1.3rem;flex: 0 0 35px;'></i>
+                <span>Bandrol İşlemleri</span>
+            </a>
+            <ul>
+                    
+                <li style=" padding: 5px 0;">
+                        <a href="~/VehicleBandrolForm/BandrolBasvurusu" style=" text-decoration:none;text-transform: initial;">
+                            Bandrol Başvurusu
+
+                        </a>
+                </li>
+                <li style=" padding: 5px 0;">
+                            <a href="~/VehicleBandrolForm/BandrolListe" style=" text-decoration:none;text-transform: initial;">
+                                Bandrollerim
+
+                            </a>
+                    
+                </li>
+            </ul>
+        </li>
+        <li style=" padding: 8px 0;list-style-type:none;">
+            <a>
+                <i class='bx bx-cog' style='color:#b5b5c3;font-size: 1.3rem;flex: 0 0 35px;'></i>
+                <span>Kullanıcı Ayarları</span>
+            </a>
+        </li>
+        }
+        @if (User.IsInRole("Yonetici"))
+        {
+
+            <li style=" padding: 8px 0;list-style-type:none;">
+                <a  style=" text-decoration:none;text-transform: initial;">
+                    <i class='bx bx-file' style='color:#b5b5c3;font-size: 1.3rem;flex: 0 0 35px;'></i>
+                    <span>Bandrol İşlemleri</span>
+                </a>
+                <ul>
+                    <li style=" padding: 5px 0;">
+                            <a href="~/Admin/BandrolOnaylaListe" style=" text-decoration:none;text-transform: initial;">
+                                Bandrol Onaylama
+
+                            </a>
+                    </li>
+                  
+                </ul>
+            </li>
+        }}
+        
+    </ul>
+
+</aside>

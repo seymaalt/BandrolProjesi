@@ -1,4 +1,5 @@
-﻿using BandrolSistemi.Data.Enum;
+﻿using ProjeBandrol.Data.Enum;
+using ProjeBandrol.Models;
 using System.ComponentModel.DataAnnotations;
 using System.Xml.Linq;
 
@@ -6,6 +7,7 @@ namespace ProjeBandrol.Data.ViewModels
 {
     public class VehicleBandrolVM
     {
+      
         public int Id { get; set; }
 
         [Display(Name = "Seri No")]
@@ -26,7 +28,6 @@ namespace ProjeBandrol.Data.ViewModels
 
 
         [Display(Name = "BandrolDurumuTxt")]
-        [Required(ErrorMessage = "Name is required")]
         public string BandrolDurumuTxt { get; set; }
 
         [Display(Name = "BandrolDurumu")]
@@ -36,10 +37,6 @@ namespace ProjeBandrol.Data.ViewModels
         [Display(Name = "KullaniciTipi")]
         [Required(ErrorMessage = "Name is required")]
         public UserType KullaniciTipi { get; set; }
-
-        ////Relationships
-        public string UserId { get; set; }
-
 
     }
 }

@@ -1,0 +1,52 @@
+﻿@using ProjeBandrol.Models;
+@model List<Bandrol>
+
+
+<div class="row create-form">
+    <div class="">
+
+        <div class="row">
+            <div class="">
+                <div class="card" style="border:none;border-radius:5px;height:520px;margin-left:12px;margin-right:12px;">
+                    <div class="card-header" style="background-color:white; color:#181C32; font-weight:500;font-size:1.275rem;margin:0.5rem;">
+                        Araçlarım
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Ad Soyad</th>
+                                    <th>Kullanıcı Tipi</th>
+                                    <th>Plaka</th>
+                                    <th class="text-center">İşlemler</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                       <td>@item.User.Ad @item.User.Soyad</td>
+                                        <td>@item.Vehicle.KullaniciTipi</td>
+                                        <td>@item.Vehicle.Plaka</td>
+                                       <td><form asp-action="BandrolOnaylaListe" method="post">
+                                            <input type="hidden" id="bandrolId" name="bandrolId" class="form-control" value="@item.Id">
+                                            <input type="hidden" id="aracId" name="aracId" class="form-control" value="@item.Vehicle.Id">
+                                            <input type="hidden" id="userId" name="userId" class="form-control" value="@item.User.Id">
+                                            <button type="submit" class="btn btn-primary btn-sm">Detay</button> 
+                                        </form>
+                                       </td>
+                                    </tr>
+                                }
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+

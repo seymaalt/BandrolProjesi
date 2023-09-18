@@ -1,4 +1,4 @@
-﻿namespace BandrolSistemi.Data.Enum
+﻿namespace ProjeBandrol.Data.Enum
 {
     public enum UserType
     {

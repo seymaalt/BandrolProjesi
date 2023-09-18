@@ -1,0 +1,131 @@
+﻿@using ProjeBandrol.Data.Enum;
+@using Microsoft.AspNetCore.Identity;
+@using ProjeBandrol.Data.ViewModels;
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager﻿
+@model OdemeVM
+@{
+    ViewData["Title"] = "Ödeme Ekranı";
+}
+
+
+
+<div class="row create-form">
+    <div class="">
+
+        <div class="row">
+            <div class="">
+                <div class="card" style="border:none;border-radius:5px;height:520px;margin-left:12px;margin-right:12px;">
+                    <div class="card-header" style="background-color:white; color:#181C32; font-weight:500;font-size:1.275rem;margin:0.5rem;">
+                        Ödeme
+                    </div>
+                    <div class="card-body">
+                     
+                        <p >
+                            <ul style="border: 1px solid #E4E6EF;border-radius:3px;">
+                                Not:
+                               
+                                <li>
+                                    dekont numarası girerek başvuru yapabilirsiniz.
+                                    Banka hesabı bilgileri: Ziraat Bankası, Sakarya Üniversitesi Şubesi (1946), IBAN: TR80 0001 0019 4690 9369 8650 01
+                                </li>
+                            </ul>
+                        </p>
+                        @if (@ViewBag.AracKullaniciTipi == UserType.Misafir)
+                        {
+                            <form asp-action="Odeme">
+
+                            <div class="row">
+
+                                <div class="">
+                                    <div class="form-group" style="padding-left:12.5px;">
+                                        <label asp-for="DekontNo" class="col-sm-3 control-label" style="font-size:1rem;font-weight:400;color:#3f4254;display:inline-block;margin-bottom:0.5rem;">Dekont No</label>
+                                            <input asp-for="DekontNo" class="col-sm-9 form-control" style="max-width:75%; padding-right:12.5px;border: 1px solid #E4E6EF;" />
+                                            <span asp-validation-for="DekontNo" class="text-danger"></span>
+                                     </div>
+                                        <input type="hidden" id="aracId" name="aracId" class="form-control" value="@ViewBag.AracId">
+                                        <input type="hidden" id="KullaniciTipi" name="KullaniciTipi" class="form-control" value="@ViewBag.AracKullaniciTipi">
+
+                                  
+                            </div>
+                            <br />
+                            <div class="form-group">
+                                <button type="" value="" href="~/VehicleBandrolForm/BandrolBasvurusu" class="btn" style="background-color:#E4E6EF;color:black;">Geri</button>
+                                <button type="submit" value="" class="btn" style="background-color:#1BC5BD;color:white;margin-left:5px;">Onaya Gönder</button>
+                            </div>
+
+                        </form>
+                            
+                        }
+                        @if (@ViewBag.AracKullaniciTipi == UserType.Personel)
+                        {
+
+                            <form asp-action="Odeme">
+                                @if (ViewBag.PersonelOdeme == true)
+                                {
+                                    <div class="row">
+
+                                        <div class="">
+                                            <div class="form-group" style="padding-left:12.5px;">
+                                                <label asp-for="DekontNo" class="col-sm-3 control-label" style="font-size:1rem;font-weight:400;color:#3f4254;display:inline-block;margin-bottom:0.5rem;">Dekont No</label>
+                                                <input asp-for="DekontNo" class="col-sm-9 form-control" style="max-width:75%; padding-right:12.5px;border: 1px solid #E4E6EF;" />
+                                                <span asp-validation-for="DekontNo" class="text-danger"></span>
+                                            </div>
+                                            <input type="hidden" id="aracId" name="aracId" class="form-control" value="@ViewBag.AracId">
+                                            <input type="hidden" id="KullaniciTipi" name="KullaniciTipi" class="form-control" value="@ViewBag.AracKullaniciTipi">
+                                        </div>
+                                    </div>
+                                }
+                                @if (ViewBag.PersonelOdeme == false)
+                                {
+                                    <p>Personel olarak İlk bandrolünüz Olduğu için ödeme yapmanıza gerek yoktur. </p>
+                                    <input type="hidden" id="DekontNo" name="DekontNo" class="form-control" value="Ucretsiz" />
+                                    <input type="hidden" id="aracId" name="aracId" class="form-control" value="@ViewBag.AracId">
+                                    <input type="hidden" id="KullaniciTipi" name="KullaniciTipi" class="form-control" value="@ViewBag.AracKullaniciTipi">
+                                }
+                                <br />
+                                <div class="form-group">
+                                    <button type="" value="" href="~/VehicleBandrolForm/BandrolBasvurusu" class="btn" style="background-color:#E4E6EF;color:black;">Geri</button>
+                                    <button type="submit" value="" class="btn" style="background-color:#1BC5BD;color:white;margin-left:5px;">Onaya Gönder</button>
+                                </div>
+
+                            </form>
+                                       
+                            
+                        }
+                        @if (@ViewBag.AracKullaniciTipi == UserType.Ogrenci)
+                        {
+                            <form asp-action="Odeme">
+
+                                <div class="row">
+
+                                    <div class="">
+                                        <div class="form-group" style="padding-left:12.5px;">
+                                            <label asp-for="DekontNo" class="col-sm-3 control-label" style="font-size:1rem;font-weight:400;color:#3f4254;display:inline-block;margin-bottom:0.5rem;">Dekont No</label>
+                                            <input asp-for="DekontNo" class="col-sm-9 form-control" style="max-width:75%; padding-right:12.5px;border: 1px solid #E4E6EF;" />
+                                            <span asp-validation-for="DekontNo" class="text-danger"></span>
+                                        </div>
+                                        <input type="hidden" id="aracId" name="aracId" class="form-control" value="@ViewBag.AracId">
+                                        <input type="hidden" id="KullaniciTipi" name="KullaniciTipi" class="form-control" value="@ViewBag.AracKullaniciTipi">
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="form-group">
+                                    <button type="" value="" href="~/VehicleBandrolForm/BandrolBasvurusu" class="btn" style="background-color:#E4E6EF;color:black;">Geri</button>
+
+                                    <button type="submit" value="" class="btn" style="background-color:#1BC5BD;color:white;margin-left:5px;">Onaya Gönder</button>
+                                </div>
+
+                            </form>
+                        }
+                        
+
+                           
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

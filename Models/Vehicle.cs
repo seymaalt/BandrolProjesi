@@ -1,9 +1,9 @@
-﻿using BandrolSistemi.Data.Enum;
-using ProjeBandrol.Models;
+﻿
+using ProjeBandrol.Data.Enum;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace BandrolSistemi.Models
+namespace ProjeBandrol.Models
 {
     public class Vehicle 
     {
@@ -23,8 +23,10 @@ namespace BandrolSistemi.Models
         public string UserId { get; set; }
 
         public virtual Bandrol? Bandrol { get; set; }
-
+        public virtual Payment? Payment { get; set; }
         [ForeignKey("UserId")]
         public virtual AppUser User { get; set; }
+
+
     }
 }

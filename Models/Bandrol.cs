@@ -1,5 +1,5 @@
-﻿using BandrolSistemi.Data.Enum;
-using BandrolSistemi.Models;
+﻿using ProjeBandrol.Data.Enum;
+using ProjeBandrol.Models;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -14,6 +14,12 @@ namespace ProjeBandrol.Models
         public int VehicleId { get; set; }
         public string UserId { get; set; }
 
+        public DateTime BaslangicTarihi { get; set; }
+        public DateTime BitisTarihi { get; set; }
+
+        public bool Aktiflik { get; set; }
+
+        public ApplicationStatusEnum BasvuruDurumu { get; set; }
 
 
         [ForeignKey("VehicleId")]
@@ -22,5 +28,8 @@ namespace ProjeBandrol.Models
 
         [ForeignKey("UserId")]
         public virtual AppUser User { get; set; }
+
+
+
     }
 }
